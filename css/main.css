@@ -633,6 +633,7 @@
 .grid-item-11 {
     position: relative;
     background: url(../img/gird10.jpg) no-repeat center center/cover;
+
 }
 
 .grid-item-11:hover::after {
@@ -643,6 +644,7 @@
     height: 100%;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.5);
+
 }
 
 .span-2 {
@@ -683,6 +685,10 @@
     font-size: 30px;
     font-weight: 700;
     margin: 0 0 30px 0;
+}
+
+.news .news_01 {
+    flex: 1;
 }
 
 .news .img_box img {
