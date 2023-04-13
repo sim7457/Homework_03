@@ -30,4 +30,5 @@ body {
     letter-spacing: -0.025em;
     font-family: 'Noto Sans KR', sans-serif;
     color: #444444;
+    overflow-x: hidden;
 }

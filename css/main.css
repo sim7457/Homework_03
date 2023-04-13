@@ -25,6 +25,7 @@
     z-index: 999;
     color: #fff;
     transition: 0.5s;
+    width: 100%;
 }
 
 .header.on {
@@ -33,10 +34,17 @@
 
 .header .inner {
     position: relative;
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     line-height: 100px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
 
+.header .gnb > ul {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
 .header .inner h1 {
@@ -58,13 +66,10 @@
     gap: 40px;
 }
 
-
-
 .gnb {
     display: flex;
     justify-content: space-between;
 }
-
 
 .header .gnb>ul>li {
     position: relative;
@@ -86,7 +91,14 @@
     transition: 0.3s;
 }
 
+@media screen and (max-width: 768px) {
+
+}
+
+
 /* mainSlide */
+
+
 .mainSlide {
     position: relative;
 }
@@ -95,13 +107,12 @@
     position: relative;
     height: 1000px;
     background-position: center center;
-    background-size: 130% auto;
+    background-size: 130% 120%;
     background-repeat: no-repeat;
-
 }
 
 .mainVisual .mainSlide figure.on {
-    background-size: 110% auto;
+    background-size: 110% 110%;
     transition: 2.5s;
 }
 
@@ -189,7 +200,20 @@
     background: rgba(0, 0, 0, 0.2);
 }
 
-
+@media screen and (max-width: 768px) {
+    .mainVisual .mainSlide figure {
+        position: relative;
+        height: 1100px;
+        background-position: center center;
+        background-size: 260% auto;
+        background-repeat: no-repeat;
+    }
+    
+    .mainVisual .mainSlide figure.on {
+        background-size: 240% auto;
+        transition: 2.5s;
+    }
+}
 
 .scroll-down {
     position: absolute;
@@ -264,8 +288,6 @@
 
     display: flex;
     width: 300px;
-
-
 }
 
 .slide_nav li {
@@ -306,11 +328,32 @@
 .carName {
     position: absolute;
     top: 350px;
-    left: 50%;
+    left: 13%;
     margin: 0 0 0 -600px;
     color: #fff;
     font-size: 65px;
     transition-duration: 0ms;
+}
+
+@media screen and (max-width: 768px) {
+    .slide_nav {
+        position: absolute;
+        top: 300px;
+        left: 50%;
+        display: flex;
+        width: 300px;
+        margin: 0 0 0 -300px;
+    }
+
+    .carName {
+        position: absolute;
+        top: 350px;
+        left: 13%;
+        color: #fff;
+        font-size: 65px;
+        transition-duration: 0ms;
+        margin: 0 0 0 -30px;
+    }
 }
 
 .content {
@@ -330,6 +373,7 @@
 .content .row-inner div {
     flex: 1;
 }
+
 
 .content .inner-left {
     height: 336px;
@@ -397,7 +441,58 @@
     color: #fff;
     text-shadow: 1px 1px 1px #444;
 }
-
+@media screen and (max-width: 768px) {
+    .content .row-inner {
+        display: flex;
+        position: relative;
+        width: 100%;
+        gap: 30px;
+    }
+    .content .inner-left P {
+        position: absolute;
+        bottom: 15%;
+        left: 30px;
+        text-shadow: 1px 1px 1px #000;
+        font-size: 12px;
+        font-weight: 300;
+        color: #fff;
+        margin: 0 0 15px 0;
+    }
+    
+    .content .inner-right P {
+        position: absolute;
+        bottom: 15%;
+        left: 30px;
+        z-index: 999;
+        font-size: 12px;
+        font-weight: 300;
+        color: #fff;
+        margin: 0 0 15px 0;
+        text-shadow: 1px 1px 1px #000;
+    }
+    
+    .content .inner-left h2 {
+        position: absolute;
+        bottom: 5%;
+        left: 30px;
+        z-index: 999;
+        font-size: 1.5em;
+        font-weight: 700;
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
+    }
+    
+    .content .inner-right h2 {
+        position: absolute;
+        bottom: 5%;
+        left: 30px;
+        font-size: 1.5em;
+        z-index: 999;
+        font-weight: 700;
+        color: #fff;
+        text-shadow: 1px 1px 1px #444;
+    }
+}
 .con-block {
     padding: 100px 0;
     margin: 0 auto;
@@ -459,6 +554,17 @@
 .con-block-ty02 .img_box img {
     width: 100%;
 }
+@media screen and (max-width: 768px) {
+    .con-block-ty02 .inner {
+        display: flex;
+        flex-direction: row;
+        max-height: 1000px;
+        flex-wrap: wrap;
+        gap: 30px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
 
 .grid-layout {
     display: grid;
@@ -467,8 +573,18 @@
     grid-auto-rows: minmax(180px, auto);
     grid-auto-flow: dense;
     padding: 1px;
-
 }
+@media (max-width: 768px) {
+    .grid-layout {
+        display: grid;
+        grid-template-columns: repeat(5, 150px);
+        grid-gap: 1px;
+        grid-auto-rows: minmax(180px, auto);
+        grid-auto-flow: dense;
+        padding: 1px;
+    }
+  }
+  
 
 .grid {
     padding: 100px 0;
@@ -728,15 +844,37 @@
     background: url(../img/more_arrow_pc.png) no-repeat center / 100% auto;
 }
 
+@media (max-width: 768px) {
+    .news .inner {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .news .img_box img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        margin: 0 0 20px 0;
+    }
+    .news .txt_box {
+        margin-left: 15px;
+    }
+    .news .txt_hd {
+        margin-left: 15px;
+    }
+  }
+  
 
 
-.footer .img_box img {
+  .footer .img_box img {
     width: 250px;
 }
 
 .footer .top {
     line-height: 120px;
-    border-bottom: 1px solid rgb(177, 177, 177);
+    border-bottom: 1px solid rgb(92, 92, 92);
     background: #000;
 }
 
@@ -758,7 +896,6 @@
     flex: 1;
 }
 
-
 .footer .right ul {
     display: flex;
     gap: 40px;
@@ -770,7 +907,6 @@
 .footer .bottom {
     line-height: 50px;
     text-align: center;
-
     margin: 0 auto;
     position: relative;
     background: #0e1116;
@@ -795,4 +931,32 @@
     margin: 0 0 0 600px;
     font-size: 25px;
     color: #fff;
+    z-index: 999;
+}
+
+/* Responsive styles for 768px and below */
+@media (max-width: 768px) {
+    .footer .inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .footer .left li {
+        margin: 10px;
+    }
+
+    .footer .right ul {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .footer .right i {
+        position: static;
+        transform: none;
+        margin: 20px 0;
+    }
 }
